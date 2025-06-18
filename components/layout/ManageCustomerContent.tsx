@@ -44,7 +44,7 @@ export default function ManageCustomerContent() {
     try {
       // Mengambil data API berdasarkan halaman
       const response = await axios.get<CustomerApiResponse>(
-        `http://localhost:8080/api/admin/manage-customer/${currentPage}`
+        `https://pintu-sewa.up.railway.app/api/admin/manage-customer/${currentPage}`
       );
 
       // Menyimpan data customer dan total halaman ke state
@@ -96,7 +96,7 @@ export default function ManageCustomerContent() {
       target.getAttribute("title") == "Deactive" ? "suspend" : "unsuspend";
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/admin/manage-customer/${change}/${customerId}`,
+        `https://pintu-sewa.up.railway.app/api/admin/manage-customer/${change}/${customerId}`,
       );
       
       fetchData();
